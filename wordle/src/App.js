@@ -5,7 +5,15 @@ function App() {
   const [solution, setSolution] = useState(null)
   
   useEffect(() => {
-    fetch('http://localhost:3001/data/db.json/solutions')
+    fetch('http://localhost:3000/data/db.json/solutions'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    
+    }
+    )
       .then(res => res.json())
       .then(json => {
         // random int between 0 & 14
